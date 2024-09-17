@@ -125,6 +125,10 @@ public class IntegerArrayList implements IntegerList{
         {
             return false;
         }
+        if (size == 0 && other.size() == 0)
+        {
+            return true;
+        }
         for (int i = 0; i < size; i++)
         {
             if (data[i].equals(other.get(i)) == false)

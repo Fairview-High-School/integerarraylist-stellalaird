@@ -2,7 +2,9 @@ public class Test {
     public static void main(String[] args) {
 
         IntegerArrayList list = new IntegerArrayList();
+        IntegerArrayList list2 = new IntegerArrayList();
         IntegerArrayList emptyList = new IntegerArrayList();
+        IntegerArrayList emptyList2 = new IntegerArrayList();
         System.out.println();
 
         
@@ -249,6 +251,89 @@ public class Test {
         System.out.println("Expected: true");
         System.out.println("Output: " + emptyList.isEmpty());
         System.out.println();
+
+
+        System.out.println("Test isEmpty(index): Return isEmpty on a non-empty list");
+        System.out.println("Input: " + list + "  size: " + list.size());
+        System.out.println("Expected: false");
+        System.out.println("Output: " + list.isEmpty());
+        System.out.println();
+
+
+        System.out.println("Test contains(val): Return whether an empty list contains a value");
+        System.out.println("Input: " + emptyList + "  size: " + emptyList.size());
+        System.out.println("Expected: false");
+        System.out.println("Output: " + emptyList.contains(1));
+        System.out.println();
+
+
+        System.out.println("Test contains(val): Return whether a non-empty list contains a value in the list (90)");
+        System.out.println("Input: " + list + "  size: " + list.size());
+        System.out.println("Expected: true");
+        System.out.println("Output: " + list.contains(90));
+        System.out.println();
+
+
+        System.out.println("Test contains(val): Return whether a non-empty list contains a value not in the list (100)");
+        System.out.println("Input: " + list + "  size: " + list.size());
+        System.out.println("Expected: false");
+        System.out.println("Output: " + list.contains(100));
+        System.out.println();
+
+
+        System.out.println("Test indexOf(val): Return the index a value appears in an empty list");
+        System.out.println("Input: " + emptyList + "  size: " + emptyList.size());
+        System.out.println("Expected: -1");
+        System.out.println("Output: " + emptyList.indexOf(1));
+        System.out.println();
+
+
+        System.out.println("Test indexOf(val): Return the index a value (90) appears in a non-empty list");
+        System.out.println("Input: " + list + "  size: " + list.size());
+        System.out.println("Expected: 6");
+        System.out.println("Output: " + list.indexOf(90));
+        System.out.println();
+
+
+        System.out.println("Test indexOf(val): Return the index a value not in the list (100) appears in a non-empty list");
+        System.out.println("Input: " + list + "  size: " + list.size());
+        System.out.println("Expected: -1");
+        System.out.println("Output: " + list.indexOf(100));
+        System.out.println();
+
+
+        System.out.println("Test equals(): Two empty lists");
+        System.out.println("Expected: true");
+        System.out.println("Output: " + emptyList.equals(emptyList2));
+        System.out.println();
+
+
+        System.out.println("Test equals(): Two equal non-empty lists");
+        System.out.println("Expected: true");
+        list.clear();
+        list2.clear();
+        for (int val = 10; val <= 100; val += 10)
+        {
+            list.add(val);
+            list2.add(val);
+        }
+        System.out.println("Output: " + list.equals(list2));
+        System.out.println();
+
+        System.out.println("Test equals(): Two non-empty lists with unequal size and same values in corresponding positions");
+        System.out.println("Expected: false");
+        list.add(110);
+        System.out.println("Output: " + list.equals(list2));
+        System.out.println();
+
+
+        System.out.println("Test equals(): Two non-empty lists with same size and different values");
+        System.out.println("Expected: false");
+        list.remove(0);
+        System.out.println("Output: " + list.equals(list2));
+        System.out.println();
+
+
 
     }
 }
